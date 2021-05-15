@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Add a Review</h1>
+<form th:method="post" th:action="@{/}" th:object="${review}">
+	<table>
+		<tr>
+			<td>
+				Restaurant Name: <span th:text="*{restaurantName}"></span>
+				<input type="hidden" th:field="*{restaurantName}">
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				Restaurant Address: <span th:text="*{restaurantAddress}"></span>
+				<input type="hidden" th:field="*{restaurantAddress}">
+			</td>
+		</tr>
+		<tr>
+			<td>Review: <input type="text" th:field="*{temp}"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Add Review"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

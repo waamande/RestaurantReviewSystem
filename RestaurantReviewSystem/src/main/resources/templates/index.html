@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<h1>Restaurants</h1>
+<table>
+	<tr>
+		<th>Restaurant Name</th>
+		<th>Restaurant Address</th>
+		<th>Action</th>
+	</tr>
+	<tr>
+		<td>Sunshine Restaurant</td>
+		<td>25 Avenue St, Brampton</td>
+		<td><a th:href="@{/reviews/1}">Add Review</a></td>
+	</tr>
+	<tr>
+		<td>Special Kitchen</td>
+		<td>53 Vivaldi Crescent, Brampton</td>
+		<td><a th:href="@{/reviews/2}">Add Review</a></td>
+	</tr>
+	<tr>
+		<td>Haweli</td>
+		<td>19750 Fraser Highway, Toronto</td>
+		<td><a th:href="@{/reviews/3}">Add Review</a></td>
+	</tr>
+	<tr>
+		<td>Sun Dragon Restaurant</td>
+		<td>78 Wakefield Drive, Missisuaga</td>
+		<td><a th:href="@{/reviews/4}">Add Review</a></td>
+	</tr>
+	<tr>
+		<td>Brown House</td>
+		<td>89 Smith St, Oakville</td>
+		<td><a th:href="@{/reviews/5}">Add Review</a></td>
+	</tr>
+	<tr>
+		<td>Olive Gardent</td>
+		<td>1011 Main St, Missisuaga</td>
+		<td><a th:href="@{/reviews/6}">Add Review</a></td>
+	</tr>
+</table>
+<br>
+<h1>Reviews About Restaurants</h1>
+<table>
+	<tr>
+		<th>Restaurant Name</th>
+		<th>Restaurant Address</th>
+		<th>Restaurant Review</th>
+		<th>Review Date</th>
+		<th>Review Time</th>
+	</tr>
+	<tr th:each="r : ${reviews}">
+		<td th:text="${r.restaurantName}"></td>
+		<td th:text="${r.restaurantAddress}"></td>
+		<td th:text="${r.review}"></td>
+		<td th:text="${r.reviewDate}"></td>
+		<td th:text="${r.reviewTime}"></td>
+	</tr>
+</table>
+</body>
+</html>
